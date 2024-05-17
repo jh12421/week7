@@ -31,13 +31,13 @@ let averageLetters = sum / names.length;
 console.log(averageLetters);
 /*loop concatenating the names together
 B.*/
-let concateNames = "";
+let concatNames = "";
 for (let i = 0; i < names.length; i++){
-  concateNames += names[i];
+  concatNames += names[i];
   //space between names
-  concateNames += " ";
+  concatNames += " ";
 }
-console.log(concateNames);
+console.log(concatNames);
 
 /*3. you access the last element in an array
 by using the .length - 1 method.*/
@@ -121,3 +121,57 @@ function returnAverage(numbers) {
 }
 let numbers3 = [21, 32, 51, 61, 84];//array
 console.log(returnAverage(numbers));
+
+//11.
+function twoArrays (array1, array2) {
+  let sumA = 0, sumB = 0;
+  //iterates through the first array
+  for (let i = 0; i < array1.length; i++){
+    sumA += array1[i];
+  }
+  //iterates through the second array
+  for (let i = 0; i< array2.length; i++){
+    sumB +=array2[i];
+  }
+  const avgA = sumA / array1.length;//figures average of first
+  const avgB = sumB / array2.length;//figures average of second
+  return avgA > avgB;//returns true if a is bigger than b
+}
+const array1 = [1, 3, 5, 10, 4];
+const array2 = [1, 5, 1, 2, 3, 5];
+const result1 = twoArrays(array1, array2);
+console.log(result1);
+
+//12.
+function willBuyDrink(isHotOutside, moneyInPocket) {
+  if (isHotOutside && moneyInPocket > 10.50){
+    return true;//if is hot out and have more than 10.50
+  }else {
+    return false;//if not
+  }
+}
+const hotOut = true;
+const moneyA = 13.50;
+console.log(willBuyDrink(hotOut, moneyA));
+
+//13.
+/*this function takes the score and prints the grade given
+depending on the the score*/
+function passingGrade(grade) {
+  if (grade >= 90) {
+    console.log('A');
+  }else if (grade >= 80 && grade <= 89){
+    console.log('B');
+  }else if (grade >= 70 && grade <= 79){
+    console.log('C');
+  }else if (grade >= 60 && grade <= 69){
+    console.log('D');
+  }else {
+    console.log('F');
+  }
+}
+passingGrade(94);
+passingGrade(86);
+passingGrade(50);
+passingGrade(76);
+passingGrade(62);
